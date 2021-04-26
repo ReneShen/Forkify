@@ -17,7 +17,6 @@ import 'regenerator-runtime/runtime';
 
 const controlRecipes = async function () {
   try {
-    // const id = `5ed6604591c37cdc054bc886`;
     const id = window.location.hash.slice(1);
     if (!id) return;
 
@@ -72,8 +71,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // 2. Render the new recipe view
-  // recipeView.render(model.state.recipe);
-  // NOTES: Update only the attributes and text of the recipe (no need to render the whole page everytime)
   recipeView.update(model.state.recipe);
 };
 

@@ -1,0 +1,38 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "recipe storage application",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel starter/index.html",
+    "build": "parcel build starter/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReneShen/Forkify.git"
+  },
+  "author": "Rene Shen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReneShen/Forkify/issues"
+  },
+  "homepage": "https://github.com/ReneShen/Forkify#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.13.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.13.0",
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "regenerator-runtime": "^0.13.7",
+    "sass": "^1.26.10"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-private-methods"
+    ]
+  },
+  "liveServer.settings.CustomBrowser": "chrome"
+}

@@ -47,7 +47,6 @@ export const loadRecipe = async function (id) {
 export const loadSearchResult = async function (query) {
   try {
     state.search.query = query;
-    // console.log(state);
 
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
 
@@ -118,7 +117,7 @@ init();
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
-// clearBookmarks();
+clearBookmarks();
 
 // Uploading new recipe to forkify API (async function)
 export const uploadRecipe = async function (newRecipe) {
@@ -127,7 +126,6 @@ export const uploadRecipe = async function (newRecipe) {
     const ingredients = Object.entries(newRecipe)
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map(ing => {
-        // const ingArr = ing[1].replaceAll(' ','').split(',');
         const ingArr = ing[1].split(',').map(el => el.trim());
         if (ingArr.length !== 3)
           throw new Error(
@@ -140,7 +138,6 @@ export const uploadRecipe = async function (newRecipe) {
       });
 
     // 2. Sending new recipe data to API
-    // For forkify API to receive data, must use the name it accepts originally
     const recipe = {
       title: newRecipe.title,
       publisher: newRecipe.publisher,
