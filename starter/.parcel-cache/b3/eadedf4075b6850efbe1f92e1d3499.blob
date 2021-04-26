@@ -1,0 +1,36 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _ViewJs = require('./View.js');
+var _ViewJsDefault = _parcelHelpers.interopDefault(_ViewJs);
+var _previewViewJs = require('./previewView.js');
+var _previewViewJsDefault = _parcelHelpers.interopDefault(_previewViewJs);
+require('url:../../img/icons.svg');
+function _defineProperty(obj, key, value) {
+  if ((key in obj)) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+class BookmarksView extends _ViewJsDefault.default {
+  constructor(...args) {
+    super(...args);
+    _defineProperty(this, "_parentElement", document.querySelector('.bookmarks'));
+    _defineProperty(this, "_errorMessage", `No bookmarks yet. Find a nice recipe and bookmark it :)`);
+    _defineProperty(this, "_message", ``);
+  }
+  // Render the bookmarks right at the beginning
+  addHandlerRender(handler) {
+    window.addEventListener('load', handler);
+  }
+  _generateMarkup() {
+    return this._data.map(bookmark => _previewViewJsDefault.default.render(bookmark, false)).join('');
+  }
+}
+exports.default = new BookmarksView();
